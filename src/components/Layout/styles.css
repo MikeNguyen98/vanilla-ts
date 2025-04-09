@@ -1,0 +1,73 @@
+/* Updated layout styles */
+
+.general-layout {
+  font-family: "Helvetica Neue", sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sticky header with refined spacing and shadow */
+.general-layout header {
+  background: #1e293b;
+  color: #fff;
+  padding: 1rem 2rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Content area that holds sidebar and main */
+.general-layout .content {
+  flex: 1;
+  display: flex;
+  min-height: 0; /* Ensure flex items can shrink and scroll */
+  overflow: hidden;
+}
+
+/* Sidebar styles with a light background and vertical spacing */
+.general-layout aside {
+  width: 240px;
+  background: #f8fafc;
+  padding: 1rem;
+  border-right: 1px solid #e2e8f0;
+  overflow-y: auto;
+}
+
+/* Sidebar navigation link styling */
+.general-layout aside nav a {
+  display: block;
+  padding: 0.5rem 0;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.general-layout aside nav a:hover,
+.general-layout aside nav a.active {
+  color: #1e293b;
+}
+
+/* Main content area */
+.general-layout main {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  background: #fff;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .general-layout .content {
+    flex-direction: column;
+  }
+  .general-layout aside {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+  }
+}
