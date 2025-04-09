@@ -1,6 +1,8 @@
 import tagIcon from "../../assets/tag.svg?raw";
-import copyIcon from "../../assets/copy.svg?raw"; // Add your copy icon SVG here
+import copyIcon from "../../assets/copy.svg?raw";
 import "../../components/Button/Button";
+import "../../components/TextEditor/TextEditor";
+import buttonComponentCode from "../../components/Button/Button.ts?raw";
 
 class ButtonPage extends HTMLElement {
   private shadow: ShadowRoot;
@@ -30,12 +32,10 @@ class ButtonPage extends HTMLElement {
   }
 
   copyCode() {
-    const code = this.shadow.querySelector("pre");
-    if (!code) return;
+    const editor = this.shadow.querySelector("text-editor") as any;
+    if (!editor) return;
 
-    const text = Array.from(code.querySelectorAll("code"))
-      .map((el) => el.textContent)
-      .join("\n");
+    const text = editor.value;
 
     navigator.clipboard.writeText(text).then(() => {
       const copyBtn = this.shadow.querySelector("#copy");
@@ -95,17 +95,7 @@ class ButtonPage extends HTMLElement {
         }
 
         pre {
-          background: #f4f4f4;
-          padding: 1rem;
-          border-radius: 6px;
-          font-size: 0.9rem;
-          overflow-x: auto;
           display: none;
-        }
-
-        code {
-          display: block;
-          margin-bottom: 0.5rem;
         }
       </style>
 
@@ -127,18 +117,23 @@ class ButtonPage extends HTMLElement {
       </div>
 
       <pre>
-        <code>&lt;custom-button variant="primary"&gt;Primary&lt;/custom-button&gt;</code>
-        <code>&lt;custom-button variant="secondary"&gt;Secondary&lt;/custom-button&gt;</code>
-        <code>&lt;custom-button variant="success"&gt;Success&lt;/custom-button&gt;</code>
+        <text-editor id="myEditor"></text-editor>
       </pre>
     `;
 
+    // Event bindings
     this.shadow
       .querySelector("#toggle")
       ?.addEventListener("click", () => this.toggleCode());
     this.shadow
       .querySelector("#copy")
       ?.addEventListener("click", () => this.copyCode());
+
+    // Set code content after DOM is rendered
+    requestAnimationFrame(() => {
+      const editor = this.shadow.querySelector("#myEditor") as any;
+      if (editor) editor.value = buttonComponentCode;
+    });
   }
 }
 

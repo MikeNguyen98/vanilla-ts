@@ -1,5 +1,5 @@
-// src/components/Button.ts
 import styles from "./styles.css?inline";
+
 class CustomButton extends HTMLElement {
   static get observedAttributes() {
     return ["variant", "type"];
