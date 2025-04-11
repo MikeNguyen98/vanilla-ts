@@ -40,3 +40,34 @@ main {
   flex: 1;
   overflow: auto;
 }
+
+.action-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.icon-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+svg {
+  width: 16px;
+  height: 16px;
+  color: #666;
+}
+
+pre {
+  display: none;
+}
