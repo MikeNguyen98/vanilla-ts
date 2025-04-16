@@ -30,12 +30,13 @@ class CustomButton extends HTMLElement {
     });
   }
   render() {
-    const variant = this.getAttribute("variant") || "primary";
+    const variant = this.getAttribute("variant") || "default";
     const type = this.getAttribute("type") || "button";
+    const color = this.getAttribute("color") || "default";
 
     this.shadow.innerHTML = `
         <style>${styles}</style>
-        <button type="${type}" class="btn ${variant}">
+        <button type="${type}" class="btn ${variant}" style={ color: ${color === 'default' ? '#': color} }>
           <slot></slot>
         </button>
       `;

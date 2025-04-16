@@ -13,15 +13,29 @@
 .btn:active {
   transform: scale(0.97);
 }
+
+.default {
+  border: 1px solid;
+  background-color: white;
+}
+
 .primary {
-  background-color: #3498db;
+  background-color: #1677ff;
   color: white;
 }
-.secondary {
-  background-color: #95a5a6;
-  color: white;
+
+.dash {
+  background-color: white;
+  border: 1px dashed;
 }
-.success {
-  background-color: #2ecc71;
-  color: white;
+
+.text {
+  background-color: white;
+  border: none;
+}
+
+.link {
+  background-color: white;
+  border: none;
+  color: #1677ff;
 }

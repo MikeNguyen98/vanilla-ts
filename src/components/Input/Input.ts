@@ -54,7 +54,6 @@ class CustomInput extends HTMLElement {
     const value = this.getAttribute("value") || "";
     this.shadow.innerHTML = `
         <style>
-          /* Basic input styling */
           ${styles}
         </style>
         <input type="text" value="${value}" />
