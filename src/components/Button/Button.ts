@@ -36,7 +36,9 @@ class CustomButton extends HTMLElement {
 
     this.shadow.innerHTML = `
         <style>${styles}</style>
-        <button type="${type}" class="btn ${variant}" style={ color: ${color === 'default' ? '#': color} }>
+        <button type="${type}" class="btn ${variant}" style={ color: ${
+      color === "default" ? (variant === "solid" ? "white" : "black") : color
+    } }>
           <slot></slot>
         </button>
       `;
