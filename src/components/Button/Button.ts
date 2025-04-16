@@ -26,7 +26,7 @@ class CustomButton extends HTMLElement {
     if (!button) return;
 
     button.addEventListener("click", () => {
-      this.dispatchEvent(new CustomEvent("button-click", { bubbles: true }));
+      this.dispatchEvent(new CustomEvent("button-click", { bubbles: true, composed: true  }));
     });
   }
   render() {
@@ -36,9 +36,11 @@ class CustomButton extends HTMLElement {
 
     this.shadow.innerHTML = `
         <style>${styles}</style>
-        <button type="${type}" class="btn ${variant}" style={ color: ${
-      color === "default" ? (variant === "solid" ? "white" : "black") : color
-    } }>
+        <button type="${type}" class="btn ${variant}" style="color: ${
+      variant === "solid" ? "white" : color === "default" ? "black" : color
+    }; background-color: ${
+      variant === "solid" ? color : "white"
+    }; border: 1px solid ${color}">
           <slot></slot>
         </button>
       `;

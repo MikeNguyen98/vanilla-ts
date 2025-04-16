@@ -1,6 +1,5 @@
-import "../../components/Button/Button";
 import "../../components/Input/Input"
-import "../../components/TextEditor/TextEditor";
+import "../../components/Templates/ContainerTemplate";
 import inputComponentCode from "../../components/Input/Input.ts?raw";
 
 class InputPage extends HTMLElement {

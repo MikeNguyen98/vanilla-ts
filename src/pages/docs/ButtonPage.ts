@@ -1,6 +1,5 @@
 import "../../components/Button/Button";
 import "../../components/Templates/ContainerTemplate";
-import "../../components/TextEditor/TextEditor";
 import buttonComponentCode from "../../components/Button/Button.ts?raw";
 
 class ButtonPage extends HTMLElement {
@@ -27,7 +26,6 @@ class ButtonPage extends HTMLElement {
         .button-group {
           display: flex;
           gap: 1rem;
-          width: 50%;
           border: 1px solid rgba(5,5,5,0.06);
           flex-wrap: wrap;
           border-radius: 8px;
@@ -39,6 +37,7 @@ class ButtonPage extends HTMLElement {
         <div class="button-group">
           <custom-button variant="primary">Primary Button</custom-button>
           <custom-button >Default Button</custom-button>
+          <custom-button variant="solid" color="red">Dashed Button</custom-button>
           <custom-button variant="dash">Dashed Button</custom-button>
           <custom-button variant="text">Text Button</custom-button>
           <custom-button variant="link">Link Button</custom-button>

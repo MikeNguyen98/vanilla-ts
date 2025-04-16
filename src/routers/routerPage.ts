@@ -13,4 +13,11 @@ export const routes = [
     layout: "general-layout",
     import: () => import("../pages/docs/InputPage"),
   },
+  {
+    path: "/checkbox",
+    component: "checkbox-page",
+    name: "Checkbox",
+    layout: "general-layout",
+    import: () => import("../pages/docs/CheckboxPage"),
+  },
 ];

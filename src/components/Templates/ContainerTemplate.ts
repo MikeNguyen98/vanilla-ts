@@ -1,5 +1,6 @@
 import tagIcon from "../../assets/tag.svg?raw";
 import copyIcon from "../../assets/copy.svg?raw";
+import "../TextEditor/TextEditor"
 
 class ContainerTemplate extends HTMLElement {
   private shadow: ShadowRoot;
