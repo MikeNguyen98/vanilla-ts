@@ -40,3 +40,11 @@ main {
   flex: 1;
   overflow: auto;
 }
+
+.flex {
+  display: flex;
+}
+
+.gap-2 {
+  gap: 8px;
+}

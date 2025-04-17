@@ -20,4 +20,11 @@ export const routes = [
     layout: "general-layout",
     import: () => import("../pages/docs/CheckboxPage"),
   },
+  {
+    path: "/radio",
+    component: "radio-page",
+    name: "Radio",
+    layout: "general-layout",
+    import: () => import("../pages/docs/RadioPage"),
+  },
 ];

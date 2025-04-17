@@ -20,7 +20,7 @@ class CheckboxPage extends HTMLElement {
   setupCheckAllButton() {
     const checkAllButton = this.shadow.querySelector("#checkAllButton");
     const checkboxes = this.shadow.querySelectorAll(
-      ".checkbox-group:nth-of-type(2) custom-checkbox"
+      "#targetGroup2 custom-checkbox"
     );
 
     if (checkAllButton) {
@@ -39,7 +39,7 @@ class CheckboxPage extends HTMLElement {
   setupUncheckAllButton() {
     const uncheckAllButton = this.shadow.querySelector("#uncheckAllButton");
     const checkboxes = this.shadow.querySelectorAll(
-      ".checkbox-group:nth-of-type(2) custom-checkbox"
+      "#targetGroup2 custom-checkbox"
     );
 
     if (uncheckAllButton) {
@@ -74,6 +74,11 @@ class CheckboxPage extends HTMLElement {
           border-radius: 8px;
           padding: 1rem;
         }
+
+        .button-group {
+          display: flex;
+          gap: 8px;
+        }
       </style>
       <container-template title="Checkbox Component">
         <div class="checkbox-group">
@@ -81,10 +86,11 @@ class CheckboxPage extends HTMLElement {
          <custom-checkbox disabled>Checkbox disabled</custom-checkbox>
          <custom-checkbox defaultChecked disabled>Checkbox checked and disabled</custom-checkbox>
         </div>
-
-        <custom-button id="checkAllButton" variant="solid" color="blue">Check All</custom-button>
-        <custom-button id="uncheckAllButton" variant="solid" color="red">Uncheck All</custom-button>
-        <div class="checkbox-group">
+        <div class="button-group">
+          <custom-button id="checkAllButton" variant="solid" color="blue">Check All</custom-button>
+          <custom-button id="uncheckAllButton" variant="solid" color="red">Uncheck All</custom-button>
+        </div>
+        <div class="checkbox-group" id="targetGroup2">
           <custom-checkbox id="checkbox1" >Checkbox</custom-checkbox>
           <custom-checkbox id="checkbox2" >Checkbox disabled</custom-checkbox>
           <custom-checkbox id="checkbox3" defaultChecked>Checkbox checked and disabled</custom-checkbox>

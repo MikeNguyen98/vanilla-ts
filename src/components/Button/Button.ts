@@ -26,20 +26,22 @@ class CustomButton extends HTMLElement {
     if (!button) return;
 
     button.addEventListener("click", () => {
-      this.dispatchEvent(new CustomEvent("button-click", { bubbles: true, composed: true  }));
+      this.dispatchEvent(
+        new CustomEvent("button-click", { bubbles: true, composed: true })
+      );
     });
   }
   render() {
-    const variant = this.getAttribute("variant") || "default";
+    const variant = this.getAttribute("variant") || "solid";
     const type = this.getAttribute("type") || "button";
     const color = this.getAttribute("color") || "default";
-
+    const colorStyle = color === "default" ? "black" : color
     this.shadow.innerHTML = `
         <style>${styles}</style>
         <button type="${type}" class="btn ${variant}" style="color: ${
-      variant === "solid" ? "white" : color === "default" ? "black" : color
+      variant === "solid" ? "white" : colorStyle
     }; background-color: ${
-      variant === "solid" ? color : "white"
+      variant === "solid" ? colorStyle : "white"
     }; border: 1px solid ${color}">
           <slot></slot>
         </button>

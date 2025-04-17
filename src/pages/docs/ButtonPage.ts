@@ -35,7 +35,7 @@ class ButtonPage extends HTMLElement {
 
       <container-template title="Button Component">
         <div class="button-group">
-          <custom-button variant="primary">Primary Button</custom-button>
+          <custom-button variant="solid" color="blue">Primary Button</custom-button>
           <custom-button >Default Button</custom-button>
           <custom-button variant="solid" color="red">Dashed Button</custom-button>
           <custom-button variant="dash">Dashed Button</custom-button>
